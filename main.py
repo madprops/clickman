@@ -21,7 +21,31 @@ def press(key):
     pyautogui.press(key)
 
 
+def ctrl(key):
+    pyautogui.hotkey("ctrl", key)
+
+
+def gh_edge():
+    click(2, 242)
+    sleep(0.5)
+
+
+def gh_cmd():
+    press("ctrl")
+    sleep(0.1)
+    press("ctrl")
+    sleep(0.5)
+
+
 def grasshopper_1():
+    gh_edge()
+    ctrl("3")
+    sleep(0.5)
+
+    # Remove debug extension
+    click(1309, 602)
+    sleep(0.5)
+
     # Right click extension icon
     click(132, 51, "right")
     sleep(0.5)
@@ -35,13 +59,8 @@ def grasshopper_1():
     click(1374, 202)
     sleep(3)
 
-    # Click left edge
-    click(2, 242)
-    sleep(0.5)
-    press("ctrl")
-    sleep(0.1)
-    press("ctrl")
-    sleep(0.5)
+    gh_edge()
+    gh_cmd()
 
     # Apply settings
     write("madprops")
