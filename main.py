@@ -1,0 +1,56 @@
+import sys
+import pyautogui
+import time
+
+def sleep(t):
+    time.sleep(t)
+
+def click(x, y, button="left"):
+    pyautogui.moveTo(x, y)
+    sleep(0.5)
+    pyautogui.click(button=button)
+
+def write(text):
+    pyautogui.typewrite(text)
+
+def press(key):
+    pyautogui.press(key)
+
+def update_grasshopper():
+    # Right click extension icon
+    click(132, 51, "right")
+    sleep(0.5)
+
+    # Click manage
+    click(210, 69)
+
+    # Check for updates
+    click(1338, 166)
+    sleep(0.5)
+    click(1374, 202)
+    sleep(3)
+
+    # Click left edge
+    click(2, 242)
+    sleep(0.5)
+    press("ctrl")
+    sleep(0.1)
+    press("ctrl")
+    sleep(0.5)
+
+    # Apply settings
+    write("madprops")
+    sleep(0.5)
+    press("enter")
+    sleep(0.5)
+    press("enter")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        sys.exit(1)
+
+    arg = sys.argv[1]
+
+    if arg == "grasshopper":
+        update_grasshopper()
