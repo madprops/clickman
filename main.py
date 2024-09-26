@@ -1,6 +1,6 @@
 import sys
-import pyautogui
 import time
+import pyautogui
 
 
 def sleep(t):
