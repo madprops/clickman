@@ -30,10 +30,14 @@ def gh_edge():
     sleep(0.5)
 
 
-def gh_cmd():
+def gh_cmd(cmd):
     press("ctrl")
     sleep(0.1)
     press("ctrl")
+    sleep(0.5)
+    write(cmd)
+    sleep(0.5)
+    press("enter")
     sleep(0.5)
 
 
@@ -60,13 +64,9 @@ def grasshopper_1():
     sleep(3)
 
     gh_edge()
-    gh_cmd()
+    gh_cmd("madprops")
 
     # Apply settings
-    write("madprops")
-    sleep(0.5)
-    press("enter")
-    sleep(0.5)
     press("enter")
 
 
