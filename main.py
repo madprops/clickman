@@ -30,7 +30,7 @@ def gh_edge():
     sleep(0.5)
 
 
-def gh_cmd(cmd):
+def gh_cmd(cmd, confirm=False):
     press("ctrl")
     sleep(0.1)
     press("ctrl")
@@ -40,9 +40,15 @@ def gh_cmd(cmd):
     press("enter")
     sleep(0.5)
 
+    if confirm:
+        press("enter")
+
 
 def grasshopper_1():
+    # Focus edge
     gh_edge()
+
+    # Focus 3rd tab
     ctrl("3")
     sleep(0.5)
 
@@ -63,12 +69,11 @@ def grasshopper_1():
     click(1374, 202)
     sleep(3)
 
-    # Run command
+    # Focus edge
     gh_edge()
-    gh_cmd("madprops")
 
-    # Confirm command
-    press("enter")
+    # Run command
+    gh_cmd("madprops", True)
 
 
 if __name__ == "__main__":
