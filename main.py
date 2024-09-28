@@ -63,10 +63,11 @@ def grasshopper_1():
     click(1374, 202)
     sleep(3)
 
+    # Run command
     gh_edge()
     gh_cmd("madprops")
 
-    # Apply settings
+    # Confirm command
     press("enter")
 
 
