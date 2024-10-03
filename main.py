@@ -53,7 +53,7 @@ def grasshopper_1():
     sleep(0.5)
 
     # Remove debug extension
-    click(1309, 602)
+    click(1315, 581)
     sleep(0.5)
 
     # Right click extension icon
