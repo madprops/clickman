@@ -53,7 +53,7 @@ def grasshopper_1():
     sleep(0.5)
 
     # Remove debug extension
-    click(1315, 581)
+    click(1314, 601)
     sleep(0.5)
 
     # Right click extension icon
@@ -73,7 +73,7 @@ def grasshopper_1():
     gh_edge()
 
     # Run command
-    gh_cmd("madprops", True)
+    gh_cmd("!madprops", True)
 
 
 if __name__ == "__main__":
